@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from 'React';
+import logo from './img/logo.png'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="grid-container">
+      <header>
+        <img src={logo} alt="WeSky logo"/>
+        <a href="/">WeSky</a>
       </header>
+      <main className="main-grid">
+        <div className="searchbar">
+          Searchbar
+        </div>
+        <section className="locationInfo">
+          Paris
+          France
+          2021-05-20 19:06
+        </section>
+        <section className="weather-current">
+           Weather (current)
+        </section>
+        <section className="weather-forecast">
+           Weather (forecast)
+        </section>
+        <section  className="astronomic">
+          Astronomic data
+        </section>
+      </main>
+      <footer>
+        Made with 💙
+      </footer>
     </div>
   );
 }
