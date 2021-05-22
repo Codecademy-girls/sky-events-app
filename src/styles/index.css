@@ -207,7 +207,6 @@ label {
   font-size: 1.1rem;
   padding: 8px;
   text-align: center;
-  height: 16.66%;
 }
 
 .astronomic-table .header-row{
@@ -215,8 +214,12 @@ label {
     font-weight: 700;
 }
 
-.astronomic-table img{
-    width: 20%;
+.astronomic-table .sun{
+    width: 10%;
+}
+
+.astronomic-table .moon{
+    width: 15%;
 }
 
 /* Footer style */
