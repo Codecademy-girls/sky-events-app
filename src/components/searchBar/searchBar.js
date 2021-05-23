@@ -7,7 +7,7 @@ export default class SearchBar extends Component {
       location: "",
     };
     this.search = this.search.bind(this);
-    this.handleLocationChange = this.handleTermChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
   }
 
   search() {
