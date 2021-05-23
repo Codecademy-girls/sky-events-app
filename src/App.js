@@ -7,6 +7,19 @@ import ForecastWeather from "./containers/forecastWeather";
 import CurrentAstronomic from "./containers/currentAstronomic";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      country: '',
+      datetime: '',
+      currentMoonrise: '',
+      currentMoonset: '',
+      currentSunrise:'',
+      currentSuntset:'',
+    };
+
+  }
+
   render() {
     return (
       <div className="grid-container">
