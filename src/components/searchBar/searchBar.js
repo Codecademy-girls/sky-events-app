@@ -3,19 +3,26 @@ import React, { Component } from "react";
 export default class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      location: "",
-    };
-    this.search = this.search.bind(this);
+
+    this.handleClick = this.handleClick.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  search() {
-    this.props.onSearch(this.state.location);
+  handleClick(event) {
+    this.props.onSearch(this.state.onSearch);
+    event.preventDefault();
   }
 
   handleLocationChange(event) {
-    this.setState({ location: event.target.value });
+    this.setState({ onSearch: event.target.value });
+  }
+
+  handleKeyDown(event) {
+    if (event.key === 'Enter') {
+        this.props.onSearch(this.state.onSearch);
+        event.preventDefault();
+    }
   }
 
   render() {
@@ -28,10 +35,11 @@ export default class SearchBar extends Component {
             type="search"
             placeholder="Search a location..."
             onChange={this.handleLocationChange}
+            onKeyDown={this.handleKeyDown}
             autofocus
             required
           />
-          <button type="submit"  className="searchButton" onClick={this.search}>Go</button>
+          <button type="submit"  className="searchButton" onClick={this.handleClick}>Go</button>
         </form>
       </div>
     );
