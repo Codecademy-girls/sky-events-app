@@ -1,8 +1,8 @@
-const apiKey = 'aa184e88f5b64834a2a95148211305';
+const apiKey = '';
 const baseUrl = 'https://api.weatherapi.com/v1/current.json';
 
 const weatherAPI = {
-    async search(location) {
+    search(location) {
         const url = `${baseUrl}?key=${apiKey}&q=${location}`;
         return fetch(url)
         .then(response => {
