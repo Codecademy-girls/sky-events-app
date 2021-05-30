@@ -6,7 +6,7 @@ export default class LocationInfo extends Component {
       <section className="locationInfo">
         <div className="name">{this.props.location.name}</div>
         <div className="country">{this.props.location.country}</div>
-        <div className="datetime">2021-05-20 19:06</div>
+        <div className="datetime">{this.props.location.dateTime}</div>
       </section>
     );
   }

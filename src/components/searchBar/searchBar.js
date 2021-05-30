@@ -29,17 +29,17 @@ export default class SearchBar extends Component {
     return (
       <div className="searchbar">
         <form role="search">
-          <label for="search">Search a location</label>
+          <label htmlFor="search">Search a location</label>
           <input
             id="search"
             type="search"
             placeholder="Search a location..."
             onChange={this.handleLocationChange}
             onKeyDown={this.handleKeyDown}
-            autofocus
+            autoFocus
             required
           />
-          <button type="submit"  className="searchButton" onClick={this.handleClick}>Go</button>
+          <button type="submit" className="searchButton" onClick={this.handleClick}>Go</button>
         </form>
       </div>
     );

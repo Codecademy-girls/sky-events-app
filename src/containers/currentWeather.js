@@ -21,56 +21,56 @@ export default class CurrentWeather extends Component {
             <td className="header-row">Icon</td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/night/116.png"
+                src={this.props.forecast.current_00.icon}
                 alt="Partly cloudy"
                 title="Partly cloudy"
               />
             </td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/night/116.png"
+                src={this.props.forecast.current_03.icon}
                 alt="Partly cloudy"
                 title="Partly cloudy"
               />
             </td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/night/116.png"
+                src={this.props.forecast.current_06.icon}
                 alt="Partly cloudy"
                 title="Partly cloudy"
               />
             </td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/day/116.png"
+                src={this.props.forecast.current_09.icon}
                 alt="Partly cloudy"
                 title="Partly cloudy"
               />
             </td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/day/116.png"
+                src={this.props.forecast.current_12.icon}
                 alt="Partly cloudy"
                 title="Partly cloudy"
               />
             </td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/day/122.png"
+                src={this.props.forecast.current_15.icon}
                 alt="Overcast"
                 title="Overcast"
               />
             </td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/day/116.png"
+                src={this.props.forecast.current_18.icon}
                 alt="Partly cloudy"
                 title="Partly cloudy"
               />
             </td>
             <td>
               <img
-                src="//cdn.weatherapi.com/weather/64x64/day/122.png"
+                src={this.props.forecast.current_21.icon}
                 alt="Overcast"
                 title="Overcast"
               />

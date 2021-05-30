@@ -215,11 +215,15 @@ label {
 }
 
 .astronomic-table .sun{
-    width: 10%;
+    width: 15%;
 }
 
 .astronomic-table .moon{
-    width: 15%;
+    width: 22%;
+}
+
+.astronomic-table .moon.type2{
+  width: 12%;
 }
 
 /* Footer style */

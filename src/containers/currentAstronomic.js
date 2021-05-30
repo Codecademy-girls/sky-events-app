@@ -10,6 +10,8 @@ export default class CurrentAstronomic extends Component {
             <th>Sunset</th>
             <th>Moonrise</th>
             <th>Moonset</th>
+            <th>Moon phase</th>
+            <th>Moon illuminaion</th>
           </tr>
           <tr>
             <td>
@@ -44,12 +46,30 @@ export default class CurrentAstronomic extends Component {
                 title="Moonset"
               />
             </td>
+            <td>
+              <img
+                className="moon type2"
+                src="https://img.icons8.com/dotty/80/000000/waxing-gibbous.png"
+                alt="Moon phase"
+                title="Moon phase"
+              />
+            </td>
+            <td>
+              <img
+                className="moon type2"
+                src="https://img.icons8.com/dotty/80/000000/moon.png"
+                alt="Moonset"
+                title="Moonset"
+              />
+            </td>
           </tr>
           <tr>
-            <td>06:43 AM</td>
-            <td>09:10 PM</td>
-            <td>02:12 PM</td>
-            <td>03:24 AM</td>
+            <td>{this.props.astronomy.sunrise}</td>
+            <td>{this.props.astronomy.sunset}</td>
+            <td>{this.props.astronomy.moonrise}</td>
+            <td>{this.props.astronomy.moonset}</td>
+            <td>{this.props.astronomy.moon_phase}</td>
+            <td>{this.props.astronomy.moon_illumination}{this.props.astronomy.moon_illumination && '%'}</td>
           </tr>
         </table>
       </section>

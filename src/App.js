@@ -11,25 +11,72 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: { 
-        name: '',
-        country: ''
+      location: {
+        name: "",
+        country: "",
+        localtime: "",
       },
-      datetime: '',
-      currentMoonrise: '',
-      currentMoonset: '',
-      currentSunrise:'',
-      currentSuntset:'',
+      forecast: {
+        current_00: {
+          icon: "",
+        },
+        current_03: {
+          icon: "",
+        },
+        current_06: {
+          icon: "",
+        },
+        current_09: {
+          icon: "",
+        },
+        current_12: {
+          icon: "",
+        },
+        current_15: {
+          icon: "",
+        },
+        current_18: {
+          icon: "",
+        },
+        current_21: {
+          icon: "",
+        },
+      },
+      astronomy: {
+        sunrise: "",
+        sunset: "",
+        moonrise: "",
+        moonset: "",
+        moon_phase: "",
+        moon_illumination: "",
+      },
     };
     this.search = this.search.bind(this);
   }
 
   search(location) {
-    weatherAPI.search(location).then(response => {
-      this.setState({ 
-        location: response 
-      })
+    //Update the location information
+    weatherAPI.search(location).then((response) => {
+      this.setState({
+        location: response,
+      });
     });
+
+    //Update the current weather information
+    weatherAPI.currentWeather(location).then((response) => {
+      this.setState({
+        forecast: response,
+      });
+    });
+
+    //Update the astronomy information
+    weatherAPI
+      .currentAstronomy(location, this.state.location.localtime)
+      .then((response) => {
+        this.setState({
+          astronomy: response,
+        });
+      });
   }
 
   render() {
@@ -42,9 +89,9 @@ class App extends React.Component {
         <main className="main-grid">
           <SearchBar onSearch={this.search} />
           <LocationInfo location={this.state.location} />
-          <CurrentWeather />
+          <CurrentWeather forecast={this.state.forecast} />
           <ForecastWeather />
-          <CurrentAstronomic />
+          <CurrentAstronomic astronomy={this.state.astronomy} />
         </main>
         <footer>Made with 💙</footer>
       </div>
