@@ -22,70 +22,70 @@ export default class CurrentWeather extends Component {
             <td>
               <img
                 src={this.props.forecast.current_00.icon}
-                alt="Partly cloudy"
-                title="Partly cloudy"
+                alt={this.props.forecast.current_00.text}
+                title={this.props.forecast.current_00.text}
               />
             </td>
             <td>
               <img
                 src={this.props.forecast.current_03.icon}
-                alt="Partly cloudy"
-                title="Partly cloudy"
+                alt={this.props.forecast.current_03.text}
+                title={this.props.forecast.current_03.text}
               />
             </td>
             <td>
               <img
                 src={this.props.forecast.current_06.icon}
-                alt="Partly cloudy"
-                title="Partly cloudy"
+                alt={this.props.forecast.current_06.text}
+                title={this.props.forecast.current_06.text}
               />
             </td>
             <td>
               <img
                 src={this.props.forecast.current_09.icon}
-                alt="Partly cloudy"
-                title="Partly cloudy"
+                alt={this.props.forecast.current_09.text}
+                title={this.props.forecast.current_09.text}
               />
             </td>
             <td>
               <img
                 src={this.props.forecast.current_12.icon}
-                alt="Partly cloudy"
-                title="Partly cloudy"
+                alt={this.props.forecast.current_12.text}
+                title={this.props.forecast.current_12.text}
               />
             </td>
             <td>
               <img
                 src={this.props.forecast.current_15.icon}
-                alt="Overcast"
-                title="Overcast"
+                alt={this.props.forecast.current_15.text}
+                title={this.props.forecast.current_15.text}
               />
             </td>
             <td>
               <img
                 src={this.props.forecast.current_18.icon}
-                alt="Partly cloudy"
-                title="Partly cloudy"
+                alt={this.props.forecast.current_18.text}
+                title={this.props.forecast.current_18.text}
               />
             </td>
             <td>
               <img
                 src={this.props.forecast.current_21.icon}
-                alt="Overcast"
-                title="Overcast"
+                alt={this.props.forecast.current_21.text}
+                title={this.props.forecast.current_21.text}
               />
             </td>
           </tr>
           <tr>
             <td className="header-row">Temperature</td>
-            <td>15.6°C</td>
-            <td>16.4°C</td>
-            <td>17.2°C</td>
-            <td>18.8°C</td>
-            <td>19.3°C</td>
-            <td>20.6°C</td>
-            <td>17.5°C</td>
-            <td>16.7°C</td>
+            <td>{this.props.forecast.current_00.temperature}° C</td>
+            <td>{this.props.forecast.current_03.temperature}° C</td>
+            <td>{this.props.forecast.current_06.temperature}° C</td>
+            <td>{this.props.forecast.current_09.temperature}° C</td>
+            <td>{this.props.forecast.current_12.temperature}° C</td>
+            <td>{this.props.forecast.current_15.temperature}° C</td>
+            <td>{this.props.forecast.current_18.temperature}° C</td>
+            <td>{this.props.forecast.current_18.temperature}° C</td>
           </tr>
           <tr>
             <td className="header-row">Wind</td>

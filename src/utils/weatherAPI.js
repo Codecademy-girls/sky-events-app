@@ -73,41 +73,57 @@ const weatherAPI = {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[0].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[0].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[0].temp_c
             },
             current_03: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[3].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[3].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[3].temp_c
             },
             current_06: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[6].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[6].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[6].temp_c
             },
             current_09: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[9].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[9].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[9].temp_c
             },
             current_12: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[12].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[12].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[12].temp_c
             },
             current_15: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[15].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[15].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[15].temp_c
             },
             current_18: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[18].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[18].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[18].temp_c
             },
             current_21: {
               icon:
                 "https:" +
-                jsonResponse.forecast.forecastday[0].hour[18].condition.icon,
+                jsonResponse.forecast.forecastday[0].hour[21].condition.icon,
+              text: jsonResponse.forecast.forecastday[0].hour[21].condition.text,
+              temperature: jsonResponse.forecast.forecastday[0].hour[21].temp_c
             },
           };
         } else {

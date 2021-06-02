@@ -19,27 +19,43 @@ class App extends React.Component {
       forecast: {
         current_00: {
           icon: "",
+          text: "",
+          temperature: 0
         },
         current_03: {
           icon: "",
+          text: "",
+          temperature: 0
         },
         current_06: {
           icon: "",
+          text: "",
+          temperature: 0
         },
         current_09: {
           icon: "",
+          text: "",
+          temperature: 0
         },
         current_12: {
           icon: "",
+          text: "",
+          temperature: 0
         },
         current_15: {
           icon: "",
+          text: "",
+          temperature: 0
         },
         current_18: {
           icon: "",
+          text: "",
+          temperature: 0
         },
         current_21: {
           icon: "",
+          text: "",
+          temperature: 0
         },
       },
       astronomy: {
