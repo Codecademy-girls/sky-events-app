@@ -11,7 +11,7 @@ export default class CurrentAstronomic extends Component {
             <th>Moonrise</th>
             <th>Moonset</th>
             <th>Moon phase</th>
-            <th>Moon illuminaion</th>
+            <th>Moon illumination</th>
           </tr>
           <tr>
             <td>
@@ -58,8 +58,8 @@ export default class CurrentAstronomic extends Component {
               <img
                 className="moon type2"
                 src="https://img.icons8.com/dotty/80/000000/moon.png"
-                alt="Moonset"
-                title="Moonset"
+                alt="Moon illumination"
+                title="Moon illumination"
               />
             </td>
           </tr>
