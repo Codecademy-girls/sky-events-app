@@ -15,47 +15,75 @@ class App extends React.Component {
         name: "",
         country: "",
         localtime: "",
+        coords: "",
+        iconNow: "",
+        textNow: "",
+        temperatureNow: 0,
       },
       forecast: {
         current_00: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
         current_03: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
         current_06: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
         current_09: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
         current_12: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
         current_15: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
         current_18: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
         current_21: {
           icon: "",
           text: "",
-          temperature: 0
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0,
         },
       },
       astronomy: {
@@ -68,6 +96,41 @@ class App extends React.Component {
       },
     };
     this.search = this.search.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      console.log("Latitude is :", lat);
+      console.log("Longitude is :", lon);
+      this.setState(
+        {
+          coords: `${lat},${lon}`,
+        },
+        () => {
+          //Update the current display information once the coords have been extracted
+          weatherAPI.search(this.state.coords).then((response) => {
+            this.setState({
+              location: response,
+            });
+          });
+          weatherAPI.currentWeather(this.state.coords).then((response) => {
+            this.setState({
+              forecast: response,
+            });
+          });
+          weatherAPI
+          .currentAstronomy(this.state.coords, this.state.location.localtime)
+          .then((response) => {
+            this.setState({
+              astronomy: response,
+            });
+          });
+        }
+      );
+    });
   }
 
   search(location) {

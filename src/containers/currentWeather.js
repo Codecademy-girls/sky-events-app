@@ -85,40 +85,40 @@ export default class CurrentWeather extends Component {
             <td>{this.props.forecast.current_12.temperature}° C</td>
             <td>{this.props.forecast.current_15.temperature}° C</td>
             <td>{this.props.forecast.current_18.temperature}° C</td>
-            <td>{this.props.forecast.current_18.temperature}° C</td>
+            <td>{this.props.forecast.current_21.temperature}° C</td>
           </tr>
           <tr>
             <td className="header-row">Wind</td>
-            <td>6.1 kmph</td>
-            <td>6.3 kmph</td>
-            <td>6.9 kmph</td>
-            <td>7.2 kmph</td>
-            <td>7.8 kmph</td>
-            <td>8.4 kmph</td>
-            <td>9.5 kmph</td>
-            <td>8.1 kmph</td>
+            <td>{this.props.forecast.current_00.wind} kmph</td>
+            <td>{this.props.forecast.current_03.wind} kmph</td>
+            <td>{this.props.forecast.current_06.wind} kmph</td>
+            <td>{this.props.forecast.current_09.wind} kmph</td>
+            <td>{this.props.forecast.current_12.wind} kmph</td>
+            <td>{this.props.forecast.current_15.wind} kmph</td>
+            <td>{this.props.forecast.current_18.wind} kmph</td>
+            <td>{this.props.forecast.current_21.wind} kmph</td>
           </tr>
           <tr>
             <td className="header-row">Precipitation</td>
-            <td>0.00 mm</td>
-            <td>0.00 mm</td>
-            <td>0.00 mm</td>
-            <td>0.00 mm</td>
-            <td>0.00 mm</td>
-            <td>0.00 mm</td>
-            <td>0.00 mm</td>
-            <td>0.00 mm</td>
+            <td>{this.props.forecast.current_00.precipitation} mm</td>
+            <td>{this.props.forecast.current_03.precipitation} mm</td>
+            <td>{this.props.forecast.current_06.precipitation} mm</td>
+            <td>{this.props.forecast.current_09.precipitation} mm</td>
+            <td>{this.props.forecast.current_12.precipitation} mm</td>
+            <td>{this.props.forecast.current_15.precipitation} mm</td>
+            <td>{this.props.forecast.current_18.precipitation} mm</td>
+            <td>{this.props.forecast.current_21.precipitation} mm</td>
           </tr>
           <tr>
             <td className="header-row">Clouds</td>
-            <td>19%</td>
-            <td>22%</td>
-            <td>21%</td>
-            <td>18%</td>
-            <td>19%</td>
-            <td>25%</td>
-            <td>24%</td>
-            <td>26%</td>
+            <td>{this.props.forecast.current_00.clouds}%</td>
+            <td>{this.props.forecast.current_03.clouds}%</td>
+            <td>{this.props.forecast.current_06.clouds}%</td>
+            <td>{this.props.forecast.current_09.clouds}%</td>
+            <td>{this.props.forecast.current_12.clouds}%</td>
+            <td>{this.props.forecast.current_15.clouds}%</td>
+            <td>{this.props.forecast.current_18.clouds}%</td>
+            <td>{this.props.forecast.current_21.clouds}%</td>
           </tr>
         </table>
       </section>

@@ -14,6 +14,9 @@ const weatherAPI = {
             name: jsonResponse.location.name,
             country: jsonResponse.location.country,
             dateTime: jsonResponse.location.localtime,
+            iconNow: jsonResponse.location.localtime,
+            textNow: jsonResponse.location.localtime,
+            temperatureNow: jsonResponse.location.localtime,
           };
         } else {
           // placeholder for error message
@@ -56,8 +59,9 @@ const weatherAPI = {
       });
   },
 
-  currentWeather(location) {
-    const url = `${baseUrl}forecast.json?key=${apiKey}&q=${location}&days=2&aqi=no&alerts=no`;
+  currentWeather(coords) {
+    const url = `${baseUrl}forecast.json?key=${apiKey}&q=${coords}&days=2&aqi=no&alerts=no`;
+    console.log("API call is: " + url);
     return fetch(url)
       .then((response) => {
         return response.json();
@@ -74,56 +78,80 @@ const weatherAPI = {
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[0].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[0].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[0].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[0].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[0].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[0].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[0].cloud,
             },
             current_03: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[3].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[3].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[3].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[3].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[3].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[3].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[3].cloud,
             },
             current_06: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[6].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[6].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[6].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[6].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[6].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[6].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[6].cloud,
             },
             current_09: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[9].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[9].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[9].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[9].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[9].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[9].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[9].cloud,
             },
             current_12: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[12].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[12].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[12].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[12].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[12].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[12].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[12].cloud,
             },
             current_15: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[15].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[15].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[15].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[15].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[15].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[15].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[15].cloud,
             },
             current_18: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[18].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[18].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[18].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[18].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[18].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[18].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[18].cloud,
             },
             current_21: {
               icon:
                 "https:" +
                 jsonResponse.forecast.forecastday[0].hour[21].condition.icon,
               text: jsonResponse.forecast.forecastday[0].hour[21].condition.text,
-              temperature: jsonResponse.forecast.forecastday[0].hour[21].temp_c
+              temperature: jsonResponse.forecast.forecastday[0].hour[21].temp_c,
+              wind: jsonResponse.forecast.forecastday[0].hour[21].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[0].hour[21].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[0].hour[21].cloud,
             },
           };
         } else {

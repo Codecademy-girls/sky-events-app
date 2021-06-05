@@ -129,19 +129,47 @@ label {
 }
 
 /* Location info section */
-
-.locationInfo {
+.location-now{
   grid-area: location;
-  background-color: #e5f1f1;
+  display: flex;
 }
 
-.locationInfo .name, .locationInfo .country{
+.location-now-info {
+  /* background-color: blue; */
+  width: 15%;
+}
+
+.location-now-name, .location-now-country{
     font-weight: 700;
     font-size: 1.3rem;
 }
 
-.locationInfo .datetime{
+.location-now-datetime{
     font-size: 1.1rem;
+}
+
+.location-now-weather{
+  width: 85%;
+  height: 100%;
+  display: flex;
+}
+
+.location-now-weather-icon{
+  /* background-color: red; */
+  width: 20%;
+  height: 100%;
+}
+
+.location-now-weather-text{
+  /* background-color: blue; */
+  width: 20%;
+  height: 100%;
+}
+
+.location-now-weather-temperature{
+  /* background-color: red; */
+  width: 20%;
+  height: 100%;
 }
 
 /* Weather Today section  */
@@ -176,7 +204,9 @@ label {
 }
 
 .weather-today-table img{
-    width: 50%;
+    width: 60%;
+    padding:0;
+    margin: 0;
 
 }
 
