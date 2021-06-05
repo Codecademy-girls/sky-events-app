@@ -136,7 +136,7 @@ label {
 
 .location-now-info {
   /* background-color: blue; */
-  width: 15%;
+  width: 10%;
 }
 
 .location-now-name, .location-now-country{
@@ -155,21 +155,26 @@ label {
 }
 
 .location-now-weather-icon{
-  /* background-color: red; */
-  width: 20%;
+  width: auto;
   height: 100%;
+  margin-top: -10px;
+  margin-left: 2rem;
 }
 
 .location-now-weather-text{
   /* background-color: blue; */
-  width: 20%;
+  width: auto;
   height: 100%;
+  padding: 1.5rem;
+  font-weight: 700;
 }
 
 .location-now-weather-temperature{
   /* background-color: red; */
-  width: 20%;
+  width: auto;
   height: 100%;
+  padding: 1.5rem;
+  font-weight: 700;
 }
 
 /* Weather Today section  */

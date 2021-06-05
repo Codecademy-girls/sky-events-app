@@ -14,9 +14,10 @@ const weatherAPI = {
             name: jsonResponse.location.name,
             country: jsonResponse.location.country,
             dateTime: jsonResponse.location.localtime,
-            iconNow: jsonResponse.location.localtime,
-            textNow: jsonResponse.location.localtime,
-            temperatureNow: jsonResponse.location.localtime,
+            timezone: jsonResponse.location.tz_id,
+            iconNow: "https:" + jsonResponse.current.condition.icon,
+            textNow: jsonResponse.current.condition.text,
+            temperatureNow: jsonResponse.current.temp_c,
           };
         } else {
           // placeholder for error message

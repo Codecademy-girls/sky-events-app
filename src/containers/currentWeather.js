@@ -2,20 +2,22 @@ import React, { Component } from "react";
 
 export default class CurrentWeather extends Component {
   render() {
+    const dateObj = new Date();
+    let weekday = dateObj.toLocaleString("default", { weekday: "long" });
+    weekday = weekday.charAt(0).toUpperCase() + weekday.slice(1)
     return (
       <section className="weather-current">
-        {/* Just some random fixed data */}
         <table className="weather-today-table">
           <tr>
             <th>&nbsp;</th>
-            <th>Thu 20 00:00 am</th>
-            <th>Thu 20 03:00 am</th>
-            <th>Thu 20 06:00 am</th>
-            <th>Thu 20 09:00 am</th>
-            <th>Thu 20 12:00 pm</th>
-            <th>Thu 20 03:00 pm</th>
-            <th>Thu 20 06:00 pm</th>
-            <th>Thu 20 09:00 pm</th>
+            <th>{weekday} 00am</th>
+            <th>{weekday} 03am</th>
+            <th>{weekday} 06am</th>
+            <th>{weekday} 09am</th>
+            <th>{weekday} 12pm</th>
+            <th>{weekday} 03pm</th>
+            <th>{weekday} 06pm</th>
+            <th>{weekday} 09pm</th>
           </tr>
           <tr>
             <td className="header-row">Icon</td>

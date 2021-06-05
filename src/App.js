@@ -15,6 +15,7 @@ class App extends React.Component {
         name: "",
         country: "",
         localtime: "",
+        timezone: "",
         coords: "",
         iconNow: "",
         textNow: "",
