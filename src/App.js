@@ -185,7 +185,7 @@ class App extends React.Component {
           });
           weatherAPI.currentWeather(this.state.coords).then((response) => {
             this.setState({
-              forecast: response,
+              weather: response,
             });
           });
           weatherAPI.forecastWeather(this.state.coords).then((response) => {
