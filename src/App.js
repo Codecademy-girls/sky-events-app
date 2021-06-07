@@ -21,7 +21,7 @@ class App extends React.Component {
         textNow: "",
         temperatureNow: 0,
       },
-      forecast: {
+      weather: {
         current_00: {
           icon: "",
           text: "",
@@ -87,6 +87,72 @@ class App extends React.Component {
           clouds: 0,
         },
       },
+      forecast: {
+        forecast_00: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+        forecast_03: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+        forecast_06: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+        forecast_09: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+        forecast_12: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+        forecast_15: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+        forecast_18: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+        forecast_21: {
+          icon: "",
+          text: "",
+          temperature: 0,
+          wind: 0,
+          precipitation: 0,
+          clouds: 0
+        },
+      },
       astronomy: {
         sunrise: "",
         sunset: "",
@@ -122,6 +188,11 @@ class App extends React.Component {
               forecast: response,
             });
           });
+          weatherAPI.forecastWeather(this.state.coords).then((response) => {
+            this.setState({
+              forecast: response,
+            });
+          });
           weatherAPI
           .currentAstronomy(this.state.coords, this.state.location.localtime)
           .then((response) => {
@@ -144,6 +215,12 @@ class App extends React.Component {
 
     //Update the current weather information
     weatherAPI.currentWeather(location).then((response) => {
+      this.setState({
+        weather: response,
+      });
+    });
+
+    weatherAPI.forecastWeather(location).then((response) => {
       this.setState({
         forecast: response,
       });
@@ -169,8 +246,8 @@ class App extends React.Component {
         <main className="main-grid">
           <SearchBar onSearch={this.search} />
           <LocationInfo location={this.state.location} />
-          <CurrentWeather forecast={this.state.forecast} />
-          <ForecastWeather />
+          <CurrentWeather weather={this.state.weather} />
+          <ForecastWeather forecast={this.state.forecast} />
           <CurrentAstronomic astronomy={this.state.astronomy} />
         </main>
         <footer>Made with 💙</footer>

@@ -27,7 +27,7 @@ export default class LocationInfo extends Component {
             {this.props.location.textNow}
           </div>
           <div className="location-now-weather-temperature">
-            {this.props.location.temperatureNow}ºC
+            {this.props.location.temperatureNow}º C
           </div>
         </section>
       </div>

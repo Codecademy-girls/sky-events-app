@@ -163,6 +163,111 @@ const weatherAPI = {
         }
       });
   },
+
+  forecastWeather(coords) {
+    const url = `${baseUrl}forecast.json?key=${apiKey}&q=${coords}&days=2&aqi=no&alerts=no`;
+    console.log("API call is: " + url);
+    return fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((jsonResponse) => {
+        if (jsonResponse.forecast) {
+          console.log(
+            "https:" +
+              jsonResponse.forecast.forecastday[1].hour[0].condition.icon
+          );
+          return {
+            forecast_00: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[0].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[0].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[0].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[0].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[0].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[0].cloud,
+            },
+            forecast_03: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[3].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[3].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[3].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[3].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[3].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[3].cloud,
+            },
+            forecast_06: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[6].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[6].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[6].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[6].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[6].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[6].cloud,
+            },
+            forecast_09: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[9].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[9].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[9].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[9].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[9].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[9].cloud,
+            },
+            forecast_12: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[12].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[12].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[12].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[12].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[12].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[12].cloud,
+            },
+            forecast_15: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[15].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[15].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[15].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[15].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[15].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[15].cloud,
+            },
+            forecast_18: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[18].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[18].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[18].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[18].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[18].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[18].cloud,
+            },
+            forecast_21: {
+              icon:
+                "https:" +
+                jsonResponse.forecast.forecastday[1].hour[21].condition.icon,
+              text: jsonResponse.forecast.forecastday[1].hour[21].condition.text,
+              temperature: jsonResponse.forecast.forecastday[1].hour[21].temp_c,
+              wind: jsonResponse.forecast.forecastday[1].hour[21].wind_kph,
+              precipitation: jsonResponse.forecast.forecastday[1].hour[21].precip_mm,
+              clouds: jsonResponse.forecast.forecastday[1].hour[21].cloud,
+            },
+          };
+        } else {
+          // placeholder for error message
+          return {
+            icon: "currentWeather_fail",
+          };
+        }
+      });
+  },
+
 };
 
 export default weatherAPI;
