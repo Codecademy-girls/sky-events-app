@@ -21,6 +21,7 @@ export default class LocationInfo extends Component {
               src={this.props.location.iconNow}
               alt={this.props.location.textNow}
               title={this.props.location.textNow}
+              className="location-now-weather-icon-img"
             />
           </div>
           <div className="location-now-weather-text">

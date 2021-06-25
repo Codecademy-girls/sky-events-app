@@ -1,86 +1,86 @@
-import React from "react";
-import logo from "./img/logo.png";
-import SearchBar from "./components/searchBar/searchBar";
-import LocationInfo from "./components/locationInfo/locationInfo";
-import CurrentWeather from "./containers/currentWeather";
-import ForecastWeather from "./containers/forecastWeather";
-import CurrentAstronomic from "./containers/currentAstronomic";
-import weatherAPI from "./utils/weatherAPI";
+import React from 'react';
+import logo from './img/logo.png';
+import SearchBar from './components/searchBar/searchBar';
+import LocationInfo from './components/locationInfo/locationInfo';
+import CurrentWeather from './containers/currentWeather';
+import ForecastWeather from './containers/forecastWeather';
+import CurrentAstronomic from './containers/currentAstronomic';
+import weatherAPI from './utils/weatherAPI';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       location: {
-        name: "",
-        country: "",
-        localtime: "",
-        timezone: "",
-        coords: "",
-        iconNow: "",
-        textNow: "",
+        name: '',
+        country: '',
+        localtime: '',
+        timezone: '',
+        coords: '',
+        iconNow: '',
+        textNow: '',
         temperatureNow: 0,
       },
       weather: {
         current_00: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
           clouds: 0,
         },
         current_03: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
           clouds: 0,
         },
         current_06: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
           clouds: 0,
         },
         current_09: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
           clouds: 0,
         },
         current_12: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
           clouds: 0,
         },
         current_15: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
           clouds: 0,
         },
         current_18: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
           clouds: 0,
         },
         current_21: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
@@ -89,77 +89,77 @@ class App extends React.Component {
       },
       forecast: {
         forecast_00: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
         forecast_03: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
         forecast_06: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
         forecast_09: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
         forecast_12: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
         forecast_15: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
         forecast_18: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
         forecast_21: {
-          icon: "",
-          text: "",
+          icon: '',
+          text: '',
           temperature: 0,
           wind: 0,
           precipitation: 0,
-          clouds: 0
+          clouds: 0,
         },
       },
       astronomy: {
-        sunrise: "",
-        sunset: "",
-        moonrise: "",
-        moonset: "",
-        moon_phase: "",
-        moon_illumination: "",
+        sunrise: '',
+        sunset: '',
+        moonrise: '',
+        moonset: '',
+        moon_phase: '',
+        moon_illumination: '',
       },
     };
     this.search = this.search.bind(this);
@@ -170,8 +170,8 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
-      console.log("Latitude is :", lat);
-      console.log("Longitude is :", lon);
+      console.log('Latitude is :', lat);
+      console.log('Longitude is :', lon);
       this.setState(
         {
           coords: `${lat},${lon}`,
@@ -194,12 +194,12 @@ class App extends React.Component {
             });
           });
           weatherAPI
-          .currentAstronomy(this.state.coords, this.state.location.localtime)
-          .then((response) => {
-            this.setState({
-              astronomy: response,
+            .currentAstronomy(this.state.coords, this.state.location.localtime)
+            .then((response) => {
+              this.setState({
+                astronomy: response,
+              });
             });
-          });
         }
       );
     });
