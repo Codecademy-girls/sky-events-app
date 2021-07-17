@@ -56,7 +56,7 @@ export default class CurrentAstronomic extends Component {
             </td>
             <td>
               <img
-                className="moon type2"
+                className="moon type3"
                 src="https://img.icons8.com/dotty/80/000000/moon.png"
                 alt="Moon illumination"
                 title="Moon illumination"

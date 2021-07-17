@@ -10,7 +10,8 @@ export default class ForecastWeather extends Component {
     return (
       <section className="weather-forecast">
         {/* Just some random fixed data */}
-        <table className="weather-today-table">
+        <h2>Tomorrow's weather</h2>
+        <table className="weather-table">
           <tr>
             <th>&nbsp;</th>
             <th>{tomorrow} 00 am</th>

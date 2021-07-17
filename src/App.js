@@ -5,7 +5,9 @@ import LocationInfo from './components/locationInfo/locationInfo';
 import CurrentWeather from './containers/currentWeather';
 import ForecastWeather from './containers/forecastWeather';
 import CurrentAstronomic from './containers/currentAstronomic';
+import CurrentAirQuality from './containers/currentAirQuality'
 import weatherAPI from './utils/weatherAPI';
+import airqualityAPI from './utils/airqualityAPI';
 
 class App extends React.Component {
   constructor(props) {
@@ -161,6 +163,14 @@ class App extends React.Component {
         moon_phase: '',
         moon_illumination: '',
       },
+      airquality: {
+        aqi: '',
+        o3: '',
+        so2: '',
+        no2: '',
+        co: '',
+        pm: '',
+      },
     };
     this.search = this.search.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -200,6 +210,11 @@ class App extends React.Component {
                 astronomy: response,
               });
             });
+          airqualityAPI.currentAirQuality(this.state.coords).then((response) => {
+            this.setState({
+              airquality: response,
+            });
+          });
         }
       );
     });
@@ -249,6 +264,7 @@ class App extends React.Component {
           <CurrentWeather weather={this.state.weather} />
           <ForecastWeather forecast={this.state.forecast} />
           <CurrentAstronomic astronomy={this.state.astronomy} />
+          <CurrentAirQuality airquality={this.state.airquality}/>
         </main>
         <footer>Made with 💙</footer>
       </div>

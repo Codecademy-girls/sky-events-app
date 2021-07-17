@@ -7,7 +7,8 @@ export default class CurrentWeather extends Component {
     weekday = weekday.charAt(0).toUpperCase() + weekday.slice(1)
     return (
       <section className="weather-current">
-        <table className="weather-today-table">
+        <h2>Today's weather</h2>
+        <table className="weather-table">
           <tr>
             <th>&nbsp;</th>
             <th>{weekday} 00 am</th>
