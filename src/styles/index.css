@@ -276,6 +276,11 @@ label {
   max-width: 17%;
 }
 
+/* Solstice section */
+.solstice p {
+  text-align: center;
+}
+
 /* Air quality section */
 
 .airquality {

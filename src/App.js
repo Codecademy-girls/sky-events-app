@@ -5,6 +5,7 @@ import LocationInfo from './components/locationInfo/locationInfo';
 import CurrentWeather from './containers/currentWeather';
 import ForecastWeather from './containers/forecastWeather';
 import CurrentAstronomic from './containers/currentAstronomic';
+import Solstice from './containers/solstice';
 import CurrentAirQuality from './containers/currentAirQuality'
 import weatherAPI from './utils/weatherAPI';
 import airqualityAPI from './utils/airqualityAPI';
@@ -264,6 +265,7 @@ class App extends React.Component {
           <CurrentWeather weather={this.state.weather} />
           <ForecastWeather forecast={this.state.forecast} />
           <CurrentAstronomic astronomy={this.state.astronomy} />
+          <Solstice />
           <CurrentAirQuality airquality={this.state.airquality}/>
         </main>
         <footer>Made with 💙</footer>
