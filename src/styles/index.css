@@ -70,7 +70,7 @@ main {
     "weather-forecast weather-forecast weather-forecast weather-forecast weather-forecast weather-forecast weather-forecast weather-forecast"
     "astronomic astronomic astronomic astronomic astronomic astronomic astronomic astronomic"
     "airquality airquality airquality airquality airquality airquality airquality airquality"; */
-  height: 100vh;
+  height: 100%;
 }
 
 /* Searchbar style */
@@ -320,10 +320,6 @@ footer {
   align-items: center;
   width: 100%;
   height: 4rem;
-
-  /* position: relative;
-  bottom: 0;
-  margin-top: 100vh; */
 
   position:fixed;
   bottom:0;
