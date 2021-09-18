@@ -1,4 +1,4 @@
-const apiKey = '3123ce2254msh67973cd897c8be9p153a6cjsn772aff228654';
+const apiKey = '';
 const baseUrl = 'air-quality.p.rapidapi.com';
 
 const airqualityAPI = {
